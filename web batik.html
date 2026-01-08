@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vohisma Batik Soul - Warisan Budaya Nusantara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      /* Reset & Variables */
+      :root {
+        --primary: #8b4513;
+        --secondary: #a0522d;
+        --accent: #d2691e;
+        --light: #f5f5dc;
+        --dark: #654321;
+        --text: #3e2723;
+        --white: #ffffff;
+        --gray: #f5f5f5;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+        --batik-jawa: #8b4513;
+        --batik-sumatra: #8b0000;
+        --batik-kalimantan: #006400;
+        --batik-sulawesi: #1e90ff;
+        --batik-modern: #9932cc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: linear-gradient(135deg, #f5f5dc 0%, #f5deb3 100%);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://blogunik.com/wp-content/uploads/2018/06/Berbagai-Macam-Motif-Batik-dan-Asalnya-11-1024x665.jpg") no-repeat center center/cover;
+        color: var(--white);
+        padding: 200px 0;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .hero-btns {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      /* Navigation */
+      .navigation {
+        background: rgba(210, 105, 30, 0.95);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand h2 {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 1rem;
+        border-radius: 25px;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Main Layout */
+      .main-layout {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        max-width: 1200px;
+        margin: 2rem auto;
+        gap: 2rem;
+        padding: 0 20px;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 2rem;
+        height: fit-content;
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 120px;
+        border: 1px solid var(--accent);
+      }
+
+      .sidebar h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        border-left: 4px solid var(--accent);
+        padding-left: 15px;
+      }
+
+      .sidebar-menu {
+        list-style: none;
+      }
+
+      .sidebar-menu li {
+        margin-bottom: 0.8rem;
+      }
+
+      .sidebar-menu a {
+        color: var(--text);
+        text-decoration: none;
+        display: block;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+        font-size: 1rem;
+      }
+
+      .sidebar-menu a:hover,
+      .sidebar-menu a.active {
+        background: var(--light);
+        color: var(--primary);
+        transform: translateX(5px);
+        border-left: 3px solid var(--primary);
+      }
+
+      /* Content */
+      .content {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 2.5rem;
+        box-shadow: var(--shadow);
+        min-height: 600px;
+        border: 1px solid var(--accent);
+      }
+
+      .section {
+        display: none;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section h2 {
+        color: var(--primary);
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+        border-bottom: 3px solid var(--accent);
+        padding-bottom: 0.8rem;
+      }
+
+      /* Mind Map Styles */
+      .mind-map-container {
+        position: relative;
+        width: 100%;
+        min-height: 600px;
+        margin: 2rem 0;
+        background: #fefefe;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .mind-map-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+      }
+
+      .mind-map-center h3 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      .mind-map-branch {
+        position: absolute;
+        width: 200px;
+        background: var(--light);
+        border-radius: 10px;
+        padding: 1.2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 5;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent);
+      }
+
+      .mind-map-branch:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        z-index: 15;
+      }
+
+      .mind-map-branch h4 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .mind-map-branch p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .branch-1 {
+        top: 20%;
+        left: 20%;
+      }
+
+      .branch-2 {
+        top: 20%;
+        right: 20%;
+      }
+
+      .branch-3 {
+        bottom: 20%;
+        left: 20%;
+      }
+
+      .branch-4 {
+        bottom: 20%;
+        right: 20%;
+      }
+
+      .branch-5 {
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+      }
+
+      .branch-6 {
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+      }
+
+      .branch-connector {
+        position: absolute;
+        background: var(--accent);
+        height: 3px;
+        z-index: 1;
+      }
+
+      .branch-connector::before,
+      .branch-connector::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: var(--primary);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .branch-connector::before {
+        left: -5px;
+      }
+
+      .branch-connector::after {
+        right: -5px;
+      }
+
+      .connector-1 {
+        top: 35%;
+        left: 35%;
+        width: 20%;
+        transform: rotate(-30deg);
+      }
+
+      .connector-2 {
+        top: 35%;
+        right: 35%;
+        width: 20%;
+        transform: rotate(30deg);
+      }
+
+      .connector-3 {
+        bottom: 35%;
+        left: 35%;
+        width: 20%;
+        transform: rotate(30deg);
+      }
+
+      .connector-4 {
+        bottom: 35%;
+        right: 35%;
+        width: 20%;
+        transform: rotate(-30deg);
+      }
+
+      .connector-5 {
+        top: 50%;
+        left: 25%;
+        width: 15%;
+        transform: translateY(-50%);
+      }
+
+      .connector-6 {
+        top: 50%;
+        right: 25%;
+        width: 15%;
+        transform: translateY(-50%);
+      }
+
+      /* PERBAIKAN UNTUK BATIK GRID DAN KARTU */
+      .batik-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+        align-items: stretch;
+      }
+
+      .batik-card {
+        background: linear-gradient(135deg, #faf9f6 0%, #ffffff 100%);
+        border-radius: 15px;
+        padding: 1.8rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        border-left: 5px solid var(--accent);
+        border: 1px solid var(--light);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 480px;
+      }
+
+      .batik-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1.2rem;
+        border: 1px solid #d2691e;
+        background-color: #f8f9fa;
+      }
+
+      .batik-card h3 {
+        color: var(--primary);
+        margin-bottom: 1.2rem;
+        font-size: 1.4rem;
+        line-height: 1.3;
+        min-height: 3.2rem;
+      }
+
+      .batik-card p {
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+        flex-grow: 1;
+      }
+
+      .batik-card p strong {
+        color: var(--dark);
+      }
+
+      /* Responsive untuk tablet */
+      @media (max-width: 1024px) {
+        .batik-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+
+        .batik-card {
+          min-height: 460px;
+          padding: 1.5rem;
+        }
+
+        .batik-image {
+          height: 200px;
+        }
+      }
+
+      /* Responsive untuk mobile */
+      @media (max-width: 768px) {
+        .batik-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .batik-card {
+          min-height: 420px;
+          padding: 1.2rem;
+        }
+
+        .batik-image {
+          height: 180px;
+        }
+
+        .batik-card h3 {
+          font-size: 1.3rem;
+          min-height: auto;
+        }
+      }
+      /* Batik Images */
+      .batik-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        border: 1px solid #d2691e;
+      }
+
+      /* PERBAIKAN: Gambar untuk model */
+      .model-image {
+        width: 100%;
+        height: 400px;
+        object-fit: contain;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        border: 1px solid #d2691e;
+        background-color: #f8f9fa;
+      }
+
+      .image-caption {
+        font-size: 0.85rem;
+        color: #666;
+        text-align: center;
+        margin-top: 0.5rem;
+        font-style: italic;
+      }
+
+      /* Model Gallery */
+      .model-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+        align-items: start;
+      }
+
+      .model-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        border: 1px solid var(--light);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .model-image {
+        width: 100%;
+        height: 280px;
+        background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .model-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .model-card:hover .model-image img {
+        transform: scale(1.05);
+      }
+
+      .model-info {
+        padding: 1.5rem;
+        background: #faf9f6;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .model-info h4 {
+        color: var(--primary);
+        margin-bottom: 0.8rem;
+        font-size: 1.2rem;
+        line-height: 1.3;
+      }
+
+      .model-info p {
+        color: var(--text);
+        line-height: 1.5;
+        margin: 0;
+        flex-grow: 1;
+      }
+
+      /* Kontak Section */
+      .contact-section {
+        background: var(--white);
+        padding: 4rem 0;
+        margin-top: 3rem;
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .contact-info {
+        background: var(--light);
+        padding: 2rem;
+        border-radius: 15px;
+        border-left: 5px solid var(--primary);
+      }
+
+      .contact-info h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+      }
+
+      .contact-details {
+        list-style: none;
+      }
+
+      .contact-details li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-details i {
+        margin-right: 15px;
+        margin-top: 5px;
+        color: var(--primary);
+        font-size: 1.2rem;
+        min-width: 20px;
+      }
+
+      .contact-form {
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+        border-left: 5px solid var(--primary);
+      }
+
+      .contact-form h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: all 0.3s;
+        font-family: inherit;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 5px rgba(139, 69, 19, 0.3);
+      }
+
+      textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .btn-submit {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+        font-weight: bold;
+      }
+
+      .btn-submit:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+      }
+
+      .btn-submit:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .btn-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .alert {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .alert-success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .alert-error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .form-control.error {
+        border-color: #dc3545;
+        box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+      }
+
+      .form-control.success {
+        border-color: #28a745;
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+      }
+
+      .error-message {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: none;
+      }
+
+      .category-tabs {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        padding: 0.8rem 1.8rem;
+        background: var(--light);
+        border: 1px solid var(--accent);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        color: var(--text);
+        font-size: 1rem;
+      }
+
+      .tab-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      /* Stats Section */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+
+      .stat-item {
+        background: white;
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 2px solid var(--accent);
+      }
+
+      .stat-number {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: var(--text);
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      /* Blog Section */
+      .blog {
+        background: var(--white);
+        padding: 4rem 0;
+        margin-top: 3rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        color: var(--primary);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-title p {
+        color: var(--text);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .blog-card {
+        background: var(--white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        border: 1px solid var(--light);
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .blog-card:hover .blog-img img {
+        transform: scale(1.05);
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .blog-meta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--secondary);
+      }
+
+      .blog-title {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        line-height: 1.4;
+      }
+
+      .blog-excerpt {
+        color: var(--text);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: var(--transition);
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        background: transparent;
+      }
+
+      .btn:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary);
+        color: white;
+        padding: 3rem 0 1rem;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-col h3 {
+        color: var(--white);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .footer-col p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--light);
+        padding-left: 5px;
+      }
+
+      .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .footer-contact i {
+        margin-right: 10px;
+        margin-top: 3px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .brand h2 {
+          font-size: 1.5rem;
+        }
+
+        .nav-links {
+          gap: 0.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .nav-links a {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.9rem;
+        }
+
+        .hero {
+          padding: 150px 0;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .main-layout {
+          grid-template-columns: 1fr;
+          margin: 1rem auto;
+          padding: 0 10px;
+        }
+
+        .sidebar {
+          position: static;
+          order: 2;
+        }
+
+        .content {
+          order: 1;
+          padding: 1.5rem;
+        }
+
+        .batik-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .model-gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .stat-item {
+          padding: 1.5rem 1rem;
+        }
+
+        .stat-number {
+          font-size: 1.8rem;
+        }
+
+        .blog {
+          padding: 2rem 0;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+
+        /* Mind Map Responsive */
+        .mind-map-container {
+          padding: 1rem;
+          min-height: 800px;
+        }
+
+        .mind-map-center {
+          width: 150px;
+          height: 150px;
+        }
+
+        .mind-map-branch {
+          width: 160px;
+          padding: 1rem;
+        }
+
+        .branch-1,
+        .branch-2,
+        .branch-3,
+        .branch-4,
+        .branch-5,
+        .branch-6 {
+          position: relative;
+          top: auto;
+          left: auto;
+          right: auto;
+          bottom: auto;
+          transform: none;
+          margin: 1rem auto;
+        }
+
+        .branch-connector {
+          display: none;
+        }
+      }
+      /* CSS untuk Bagian Filosofi Batik */
+      #filosofi .batik-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+        align-items: stretch;
+      }
+
+      #filosofi .batik-card {
+        background: linear-gradient(135deg, #faf9f6 0%, #ffffff 100%);
+        border-radius: 15px;
+        padding: 1.8rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        border-left: 5px solid var(--accent);
+        border: 1px solid var(--light);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 280px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #filosofi .batik-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+      }
+
+      #filosofi .batik-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      #filosofi .batik-card h3 {
+        color: var(--primary);
+        margin-bottom: 1.2rem;
+        font-size: 1.4rem;
+        line-height: 1.3;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      #filosofi .batik-card h3 .emoji {
+        font-size: 1.6rem;
+      }
+
+      #filosofi .batik-card p {
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+        flex-grow: 1;
+      }
+
+      #filosofi .batik-card p strong {
+        color: var(--dark);
+        background: linear-gradient(transparent 60%, rgba(210, 105, 30, 0.2) 40%);
+        padding: 0 2px;
+      }
+
+      #filosofi .batik-card p:last-of-type {
+        background: var(--light);
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 3px solid var(--accent);
+        font-style: italic;
+        margin-top: 0.5rem;
+      }
+
+      /* Warna khusus untuk setiap jenis filosofi */
+      #filosofi .batik-card:nth-child(1) {
+        border-left-color: #8b4513;
+      }
+      #filosofi .batik-card:nth-child(2) {
+        border-left-color: #8b4513;
+      }
+      #filosofi .batik-card:nth-child(3) {
+        border-left-color: #8b4513;
+      }
+      #filosofi .batik-card:nth-child(4) {
+        border-left-color: #8b4513;
+      }
+      #filosofi .batik-card:nth-child(5) {
+        border-left-color: #8b4513;
+      }
+      #filosofi .batik-card:nth-child(6) {
+        border-left-color: #8b4513;
+      }
+
+      /* Responsive untuk tablet */
+      @media (max-width: 1024px) {
+        #filosofi .batik-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+
+        #filosofi .batik-card {
+          min-height: 260px;
+          padding: 1.5rem;
+        }
+      }
+
+      /* Responsive untuk mobile */
+      @media (max-width: 768px) {
+        #filosofi .batik-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        #filosofi .batik-card {
+          min-height: 240px;
+          padding: 1.2rem;
+        }
+
+        #filosofi .batik-card h3 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navigation">
+      <div class="nav-content">
+        <div class="brand">
+          <h2>Vohisma Batik</h2>
+        </div>
+        <div class="nav-menu">
+          <div class="nav-links">
+            <a href="#beranda" onclick="showSection('beranda')" class="active">Beranda</a>
+            <a href="#sejarah" onclick="showSection('sejarah')">Sejarah</a>
+            <a href="#jenis" onclick="showSection('jenis')">Jenis Batik</a>
+            <a href="#filosofi" onclick="showSection('filosofi')">Filosofi</a>
+            <a href="#tentang" onclick="showSection('tentang')">Tentang</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Warisan Budaya dalam Setiap Corak</h1>
+          <p>Temukan keindahan batik Indonesia dengan desain modern yang memadukan tradisi dan gaya kontemporer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h3>Kategori Batik</h3>
+        <ul class="sidebar-menu">
+          <li><a href="batik tradisional.html" onclick="showSection('jenis')">Batik Tradisional</a></li>
+          <li><a href="batik modern.html" onclick="showSection('jenis')">Batik Modern</a></li>
+        </ul>
+
+        <h3 style="margin-top: 2rem">Navigasi Cepat</h3>
+        <ul class="sidebar-menu">
+          <li><a href="#" onclick="showSection('sejarah')">Sejarah Batik</a></li>
+          <li><a href="#" onclick="showSection('filosofi')">Makna & Filosofi</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <main class="content">
+        <!-- Beranda Section -->
+        <div id="beranda" class="section active">
+          <h2>Selamat Datang di Dunia Batik Indonesia</h2>
+          <p style="font-size: 1.1rem; margin-bottom: 2rem; text-align: justify">
+            Batik adalah warisan budaya Indonesia yang telah diakui UNESCO sebagai Warisan Kemanusiaan untuk Budaya Lisan dan Nonbendawi pada tahun 2009. Seni membatik telah menjadi bagian integral dari kehidupan masyarakat Indonesia selama
+            berabad-abad, mencerminkan kekayaan budaya dan filosofi hidup bangsa Indonesia.
+          </p>
+
+          <!-- Stats Section -->
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">🎨 2000+</div>
+              <div class="stat-label">Motif Batik</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">🌍 2009</div>
+              <div class="stat-label">Tahun UNESCO</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">🏛️ 34</div>
+              <div class="stat-label">Provinsi</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">👑 500+</div>
+              <div class="stat-label">Tahun Sejarah</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sejarah Section -->
+        <div id="sejarah" class="section">
+          <h2>Sejarah Batik Indonesia</h2>
+
+          <div class="mind-map-container">
+            <div class="mind-map-center">
+              <h3>Sejarah Batik Indonesia</h3>
+            </div>
+
+            <div class="branch-connector connector-1"></div>
+            <div class="mind-map-branch branch-1">
+              <h4>Abad ke-6</h4>
+              <p>Awal mula batik di Indonesia. Berkembang di keraton-keraton Jawa.</p>
+            </div>
+
+            <div class="branch-connector connector-2"></div>
+            <div class="mind-map-branch branch-2">
+              <h4>Abad ke-17</h4>
+              <p>Batik mulai menyebar ke luar keraton dan dipelajari rakyat biasa.</p>
+            </div>
+
+            <div class="branch-connector connector-3"></div>
+            <div class="mind-map-branch branch-3">
+              <h4>Abad ke-19</h4>
+              <p>Teknik batik cap diperkenalkan, memungkinkan produksi massal.</p>
+            </div>
+
+            <div class="branch-connector connector-4"></div>
+            <div class="mind-map-branch branch-4">
+              <h4>2009</h4>
+              <p>UNESCO mengakui batik sebagai Warisan Budaya Dunia.</p>
+            </div>
+
+            <div class="branch-connector connector-5"></div>
+            <div class="mind-map-branch branch-5">
+              <h4>Asal Usul Nama</h4>
+              <p>Kata "batik" berasal dari bahasa Jawa "amba" (menulis) dan "titik".</p>
+            </div>
+
+            <div class="branch-connector connector-6"></div>
+            <div class="mind-map-branch branch-6">
+              <h4>Penyebaran</h4>
+              <p>Dari Jawa ke seluruh Nusantara, masing-masing daerah mengembangkan ciri khasnya.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jenis Batik Section -->
+        <div id="jenis" class="section">
+          <div class="content-section">
+            <h2>6 Jenis Batik Populer Di Indonesia</h2>
+            <p>Batik Indonesia memiliki keragaman yang luar biasa dengan berbagai motif dan corak khas dari setiap daerah.</p>
+
+            <div class="batik-grid">
+              <div class="batik-card">
+                <img src="img/parang.jpeg" alt="Batik Parang" class="batik-image" />
+                <h3>Batik Parang</h3>
+                <p><strong>Asal:</strong> Daerah Istimewa Yogyakarta</p>
+                <p><strong>Motif Khas:</strong> Parang (garis diagonal menyerupai ombak)</p>
+                <p><strong>Ciri Khas:</strong> Garis diagonal tegas berkesinambungan, warna soga dan biru tua</p>
+                <p><strong>Karakter:</strong> Gagah, berwibawa, dan dinamis</p>
+              </div>
+
+              <div class="batik-card">
+                <img src="img/kawung.jpeg" alt="Batik Kawung" class="batik-image" />
+                <h3>Batik Kawung</h3>
+                <p><strong>Asal:</strong> Yogyakarta & Solo</p>
+                <p><strong>Motif Khas:</strong> Kawung (geometris bulat menyerupai buah kolang-kaling)</p>
+                <p><strong>Ciri Khas:</strong> Motif geometris bulat oval tersusun rapi, warna soga dan hitam</p>
+                <p><strong>Karakter:</strong> Simetris, elegan, dan penuh makna filosofis</p>
+              </div>
+
+              <div class="batik-card">
+                <img src="img/megamendung.jpeg" alt="Batik Cirebon" class="batik-image" />
+                <h3>Batik Mega Mendung</h3>
+                <p><strong>Asal:</strong> Cirebon, Jawa Barat</p>
+                <p><strong>Motif Khas:</strong> Mega Mendung (awan berarak)</p>
+                <p><strong>Ciri Khas:</strong> Gradasi warna biru, pengaruh budaya Tionghoa</p>
+                <p><strong>Karakter:</strong> Artistik, simbolik, dan mencerminkan harmoni alam</p>
+              </div>
+
+              <div class="batik-card">
+                <img src="img/tujuh rupa.jpeg" alt="Batik Tujuh Rupa" class="batik-image" />
+                <h3>Batik Tujuh Rupa</h3>
+                <p><strong>Asal:</strong> Pekalongan, Jawa Tengah</p>
+                <p><strong>Motif Khas:</strong> Flora dan fauna dengan warna cerah</p>
+                <p><strong>Ciri Khas:</strong> Kombinasi motif flora-fauna dengan warna cerah, pengaruh multikultural</p>
+                <p><strong>Karakter:</strong> Ceria, dinamis, dan mencerminkan akulturasi budaya</p>
+              </div>
+
+              <div class="batik-card">
+                <img src="img/madura.jpeg" alt="Batik Madura" class="batik-image" />
+                <h3>Batik Madura</h3>
+                <p><strong>Asal:</strong> Pulau Madura, Jawa Timur</p>
+                <p><strong>Motif Khas:</strong> Gentongan, Daun Memba, Matahari</p>
+                <p><strong>Ciri Khas:</strong> Warna cerah dan kontras (merah, kuning, hijau)</p>
+                <p><strong>Karakter:</strong> Ekspresif, berani, dan penuh energi</p>
+              </div>
+
+              <div class="batik-card">
+                <img src="img/bali.jpeg" alt="Batik Bali" class="batik-image" />
+                <h3>Batik Bali</h3>
+                <p><strong>Asal:</strong> Pulau Bali</p>
+                <p><strong>Motif Khas:</strong> Rangda, Barong, Frangipani</p>
+                <p><strong>Ciri Khas:</strong> Motif alam dan mitologi Bali yang kaya</p>
+                <p><strong>Karakter:</strong> Eksotis, spiritual, dan penuh makna religius</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filosofi Section -->
+        <div id="filosofi" class="section">
+          <h2>Filosofi dan Makna Batik</h2>
+          <p style="font-size: 1.1rem; margin-bottom: 2rem; text-align: justify">
+            Setiap motif batik Indonesia memiliki filosofi dan makna yang mendalam, mencerminkan pandangan hidup, kepercayaan, dan nilai-nilai luhur masyarakat. Berikut adalah makna dari beberapa motif batik terkenal:
+          </p>
+
+          <div class="batik-grid">
+            <div class="batik-card">
+              <h3><span class="emoji">⚡</span> Motif Parang</h3>
+              <p><strong>Filosofi:</strong> Kekuatan, ketegasan, dan kepemimpinan</p>
+              <p>Motif ini melambangkan ombak laut yang tak pernah berhenti, menggambarkan semangat yang tidak pernah surut dalam perjuangan hidup.</p>
+            </div>
+
+            <div class="batik-card">
+              <h3><span class="emoji">🌸</span> Motif Kawung</h3>
+              <p><strong>Filosofi:</strong> Kesucian, kemurnian, dan keadilan</p>
+              <p>Terinspirasi dari buah kawung (kolang-kaling), melambangkan hati yang bersih dan jiwa yang suci dalam menjalani kehidupan.</p>
+            </div>
+
+            <div class="batik-card">
+              <h3><span class="emoji">☁️</span> Motif Mega Mendung</h3>
+              <p><strong>Filosofi:</strong> Kesabaran dan ketenangan</p>
+              <p>Menggambarkan awan yang bergerak perlahan, mengajarkan untuk bersabar dan tidak tergesa-gesa dalam menghadapi masalah.</p>
+            </div>
+
+            <div class="batik-card">
+              <h3><span class="emoji">🌺</span> Motif Tujuh Rupa</h3>
+              <p><strong>Filosofi:</strong> Keberagaman dan persatuan</p>
+              <p>Motif yang terbagi menjadi tujuh bagian, melambangkan keragaman yang saling melengkapi dalam harmoni.</p>
+            </div>
+
+            <div class="batik-card">
+              <h3><span class="emoji">🦋</span> Motif Bali</h3>
+              <p><strong>Filosofi:</strong> Spiritualitas dan keseimbangan</p>
+              <p>Motif ini melambangkan hubungan harmonis antara manusia, alam, dan sang pencipta dalam budaya Bali.</p>
+            </div>
+
+            <div class="batik-card">
+              <h3><span class="emoji">🌊</span> Motif Sido Mukti</h3>
+              <p><strong>Filosofi:</strong> Kemakmuran dan kebahagiaan</p>
+              <p>Biasa digunakan dalam upacara pernikahan, memiliki harapan agar pengantin mendapat kebahagiaan dan kemakmuran.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tentang Section -->
+        <div id="tentang" class="section">
+          <h2>Tentang Batik Indonesia</h2>
+          <div style="background: #faf9f6; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid #f0e6d2">
+            <h3 style="color: #8d6e63; margin-bottom: 1rem">Mengenal Lebih Dekat Batik</h3>
+            <p style="text-align: justify; margin-bottom: 1rem">
+              Batik Indonesia bukan sekadar kain bermotif, tetapi merupakan mahakarya budaya yang mengandung nilai-nilai filosofis mendalam. Setiap goresan canting dan setiap tetes malam memiliki cerita dan makna tersendiri.
+            </p>
+            <p style="text-align: justify">Website ini hadir untuk memperkenalkan keindahan dan kekayaan batik Indonesia kepada dunia, sekaligus melestarikan warisan budaya yang tak ternilai harganya.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog">
+      <div class="container">
+        <div class="section-title">
+          <h2>Artikel & Tips Batik</h2>
+          <p>Informasi terbaru seputar batik dan fashion Indonesia</p>
+        </div>
+
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="img/sejarah.jpeg" alt="Proses Membatik Tradisional" />
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title">Sejarah Batik: Warisan Budaya Indonesia yang Mendunia</h3>
+              <p class="blog-excerpt">Batik telah menjadi warisan budaya Indonesia yang diakui UNESCO. Bagaimana sejarahnya?</p>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrgNOmpYdpox5ASM3lXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Nj/RV=2/RE=1760351914/RO=10/RU=https%3a%2f%2fbatikjogja.id%2fblog%2fsejarah-batik%23%3a~%3atext%3dMengenal%2520sejarah%2520batik%2520Indonesia%252C%2520dari%2520asal%2520usul%2520hingga%2cmerupakan%2520warisan%2520budaya%2520Indonesia%2520yang%2520telah%2520diakui%2520dunia./RK=2/RS=qhFMbfTbELJG_WlzlZG0Z4iFdVg-"
+                class="btn"
+                >Baca Selengkapnya</a
+              >
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="img/memilih.jpeg" alt="Berbagai Jenis Batik" />
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title">Tips Memilih Batik Sesuai Jenis, Motif dan Warnanya</h3>
+              <p class="blog-excerpt">Tidak semua batik cocok untuk setiap acara. Simak tips memilih batik yang tepat sesuai dengan jenis acara yang akan Anda hadiri.</p>
+              <a
+                href="https://r.search.yahoo.com/_ylt=Awr.3Ii1YNpoypQQo5BXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1760351669/RO=10/RU=https%3a%2f%2fid.theasianparent.com%2ftips-memilih-batik/RK=2/RS=DrmYt2_ubgWFFf_XD7Kg1A2KjLE-"
+                class="btn"
+                >Baca Selengkapnya</a
+              >
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="img/cara.jpeg" alt="Perawatan Kain Batik" />
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title">Cara Merawat Kain Batik agar Awet dan Tidak Luntur</h3>
+              <p class="blog-excerpt">Batik memerlukan perawatan khusus agar motif dan warnanya tetap terjaga. Pelajari cara merawat batik dengan benar.</p>
+              <a
+                href="https://r.search.yahoo.com/_ylt=AwrOoOj5YNpoivUR4oxXNyoA;_ylu=Y29sbwNncTEEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1760351738/RO=10/RU=https%3a%2f%2fgurubatik.id%2ftips-merawat-kain-batik-agar-tahan-lama%2f/RK=2/RS=fwKUeCf6HUMMq7v42n72Gp1e5VY-"
+                class="btn"
+                >Baca Selengkapnya</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="section-title">
+          <h2>Hubungi Kami</h2>
+          <p>Punya pertanyaan tentang batik atau ingin berkonsultasi? Silakan hubungi kami</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Informasi Kontak</h3>
+            <ul class="contact-details">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Alamat</strong><br />
+                  Jl. Ikan Piranha Atas, Tunjungsekar, Kec. Lowokwaru<br />
+                  Kota Malang, Jawa Timur 65142, Indonesia
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <div>
+                  <strong>Telepon</strong><br />
+                  (0341) 478195
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong>Email</strong><br />
+                  info@vohismabatik.com
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <div>
+                  <strong>Jam Operasional</strong><br />
+                  Senin - Jumat: 08:00 - 17:00<br />
+                  Sabtu: 08:00 - 15:00
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form">
+            <h3>Kirim Pesan ke Vohisma Batik</h3>
+
+            <!-- Alert untuk pesan sukses/error -->
+            <div id="alertMessage" style="display: none"></div>
+
+            <form id="contactForm" name="contact">
+              <div class="form-group">
+                <label for="nama">Nama Lengkap *</label>
+                <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukkan nama lengkap Anda" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Masukkan alamat email Anda" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subjek">Subjek *</label>
+                <input type="text" id="subjek" name="subjek" class="form-control" placeholder="Masukkan subjek pesan" required />
+              </div>
+
+              <div class="form-group">
+                <label for="pesan">Pesan *</label>
+                <textarea id="pesan" name="pesan" class="form-control" placeholder="Tulis pesan Anda di sini..." rows="5" required></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit" id="submitBtn">
+                <div class="btn-content">
+                  <span id="submitText">Kirim Pesan</span>
+                  <span id="submitLoading" class="loading" style="display: none"></span>
+                </div>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Vohisma Batik</h3>
+            <p>Menghadirkan keindahan batik Indonesia dengan sentuhan modern untuk gaya hidup kontemporer.</p>
+            <div class="social-links">
+              <a href="https://www.instagram.com/smkn.5.malang?igsh=MWg3Mm5pOG5ubmJncg==" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="https://youtube.com/@smkn5malang-vh5?si=-UT93y19x6KC6zsU" class="social-link"><i class="fab fa-youtube"></i></a>
+              <a href="https://share.google/Evv9s0z8nzIGPBCuY" class="social-link"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Informasi</h3>
+            <ul class="footer-links">
+              <li><a href="#">Tentang Kami</a></li>
+              <li><a href="#">Kebijakan Privasi</a></li>
+              <li><a href="#">Syarat & Ketentuan</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Bantuan & FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Akun Saya</h3>
+            <ul class="footer-links">
+              <li><a href="#">Akun Saya</a></li>
+              <li><a href="#">Riwayat Pesanan</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Newsletter</a></li>
+              <li><a href="#">Pengembalian</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Kontak</h3>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Jl. Ikan Piranha Atas, Tunjungsekar, Kec. Lowokwaru, Kota Malang, Jawa Timur 65142, Indonesia</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>(0341) 478195</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@vohismabatik.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Vohisma Batik. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript untuk navigasi dan form submission -->
+    <script>
+      // Fungsi untuk menampilkan section
+      function showSection(sectionId) {
+        // Sembunyikan semua section
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        // Tampilkan section yang dipilih
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add("active");
+        }
+
+        // Update navigasi aktif
+        const navLinks = document.querySelectorAll(".nav-links a");
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      // URL Google Apps Script Web App
+      const scriptURL = "https://script.google.com/macros/s/AKfycbw95sFIrXVwUule4UORWRHfyu8WuXn3LvmyHaaBQN2bOZi0UxnWwArMP6QEgThCKCGs/exec";
+      const form = document.forms["contact"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Validasi form
+        if (!validateForm()) {
+          return;
+        }
+
+        // Mendapatkan tombol submit
+        const submitButton = document.getElementById("submitBtn");
+        const submitText = document.getElementById("submitText");
+        const submitLoading = document.getElementById("submitLoading");
+
+        // Menampilkan loading state
+        submitText.textContent = "Mengirim...";
+        submitLoading.style.display = "inline-block";
+        submitButton.disabled = true;
+
+        // Mengirim data ke Google Apps Script dengan format yang benar
+        const formData = new FormData(form);
+
+        // Debug: lihat data yang dikirim
+        console.log("Data yang dikirim:");
+        for (let [key, value] of formData.entries()) {
+          console.log(key + ": " + value);
+        }
+
+        fetch(scriptURL, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            console.log("Success!", response);
+            showAlert("Pesan berhasil dikirim! Terima kasih telah menghubungi kami.", "success");
+            form.reset();
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            showAlert("Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.", "error");
+          })
+          .finally(() => {
+            // Mengembalikan tombol ke keadaan semula
+            submitText.textContent = "Kirim Pesan";
+            submitLoading.style.display = "none";
+            submitButton.disabled = false;
+          });
+      });
+
+      // Fungsi validasi form
+      function validateForm() {
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subjek = document.getElementById("subjek").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
+
+        if (!nama) {
+          showAlert("Nama lengkap harus diisi", "error");
+          return false;
+        }
+
+        if (!email) {
+          showAlert("Email harus diisi", "error");
+          return false;
+        }
+
+        if (!isValidEmail(email)) {
+          showAlert("Format email tidak valid", "error");
+          return false;
+        }
+
+        if (!subjek) {
+          showAlert("Subjek harus diisi", "error");
+          return false;
+        }
+
+        if (!pesan) {
+          showAlert("Pesan harus diisi", "error");
+          return false;
+        }
+
+        return true;
+      }
+
+      // Fungsi validasi email
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      // Fungsi untuk menampilkan alert
+      function showAlert(message, type) {
+        const alertDiv = document.getElementById("alertMessage");
+        alertDiv.textContent = message;
+        alertDiv.className = "alert";
+
+        if (type === "success") {
+          alertDiv.classList.add("alert-success");
+        } else if (type === "error") {
+          alertDiv.classList.add("alert-error");
+        }
+
+        alertDiv.style.display = "block";
+
+        // Sembunyikan alert setelah 5 detik
+        setTimeout(() => {
+          alertDiv.style.display = "none";
+        }, 5000);
+      }
+
+      // Inisialisasi
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tampilkan section beranda secara default
+        showSection("beranda");
+      });
+    </script>
+  </body>
+</html>
